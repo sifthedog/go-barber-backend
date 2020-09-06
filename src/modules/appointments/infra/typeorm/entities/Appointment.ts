@@ -25,6 +25,10 @@ class Appointment {
   @Column('timestamp with time zone')
   date: Date;
 
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
+
   @CreateDateColumn()
   created_at: Date;
 
